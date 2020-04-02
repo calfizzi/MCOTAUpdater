@@ -11,7 +11,7 @@ in that file you have to write your SimpleUpdate.bin version like following row:
 
 ## Constructor
 ```
-  MCOTAUpdater(Your_Host_Name, Your_URI_path, Version_Field_1, Version_Field_2, Version_Field_3,, Version_Field_4)
+  MCOTAUpdater                ( Your_Host_Name, Your_URI_path, Version_Field_1, Version_Field_2, Version_Field_3,, Version_Field_4)
 ```
 
 ## Methods:
