@@ -1,28 +1,22 @@
-# MCESPInternetDateTime
-This Library works on ESP8266 and ESP32 to get Date Time and Time Zone using your IP.
+# MCOTAUpdater
+This Library works on ESP8266 and ESP32 to manage OTA update of your ESP board.
 
-The library use the site:
+copy in your Website (your path) the SimpleUpdate.bin generated
 
-  http://worldtimeapi.org/
-  
-To get Data/Time information using Api:
+copy a json (text format) file named your SimpleUpdate.bin.version.json
 
-  http://worldtimeapi.org/api/ip
-  
+in that file you have to write your SimpleUpdate.bin version like following row:
+
+{"v1":1,"v2":0,"v3":0,"v4":0}
+
+## Constructor
+  MCOTAUpdater(Your_Host_Name, Your_URI_path, Version_Field_1, Version_Field_2, Version_Field_3,, Version_Field_4)
+
 ## Methods:
-  time_t    **GetTime ( void )**; // Call the Api and get Current Time
-  
-  void      **ToSerial( void )**; // Print to serial all the information Got.
-  
-  
-## Properties:
-  bool                **IsDayLightSaving**; // is true if is in Day Light Saving period
-  
-  uint32_t            **TimeZoneOffsetInSeconds**; // seconds offset for your zone including Day Light Saving period
-  
-  time_t              **UTCDateTime**; // UTC Date/Time 
-  
-  time_t              **DateTime**; // Current Date/Time
-  
-  String              **Timezone**; // TimeZone description
+  Version  &Handle            ( uint16_t intervalInSeconds =  120);      // 2 hours check if new version exist and return it
+  Error     Update            ( uint8_t PinLed=-1, bool NormalStatus=1); // PIN flash during update
+  void      SetCurrentVersion ( byte v1, byte v2, byte v3, byte v4);     // to change the current version
+  bool      ExistNewVersion   ( uint16_t intervalInSeconds = 120);       // 2 hours
+  Version  &GetNewVersion     ( void );
+  Version  &GetCurrentVersion ( void );  
   
