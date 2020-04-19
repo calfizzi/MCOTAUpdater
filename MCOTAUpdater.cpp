@@ -14,10 +14,10 @@
 #endif
 
 #ifndef  FILE_READ
-  #define  FILE_READ "r"
+  #define  FILE_READ    "r"
 #endif
 #ifndef  FILE_WRITE
-  #define  FILE_WRITE "w"
+  #define  FILE_WRITE   "w"
 #endif
 #ifndef  FILE_APPEND
   #define  FILE_APPEND  "a"
