@@ -10,7 +10,7 @@ in that file you have to write your SimpleUpdate.bin.version.json like following
 {"v1":1,"v2":0,"v3":0,"v4":0}
 
 ## MCOTAUpdater & SPIFFS
-if you whant update the SPIFFS file System TOO you have to write into your "SimpleUpdate.bin.version.json" something like this:
+if you want update the SPIFFS file System TOO you have to write into your "SimpleUpdate.bin.version.json" something like this:
 
 {"v1":1,"v2":0,"v3":0,"v4":0,"SPIFFS_format":0,"SPIFFS_update_files":["/index.html","/index2.html","/images/monkey-logo.png"]}
 
