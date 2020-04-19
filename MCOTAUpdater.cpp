@@ -1,3 +1,25 @@
+/*
+
+  Module: MCOTAUpdater 
+  Author: Mario Calfizzi (MC)
+
+  Description:
+      This Library works on ESP8266 and ESP32 to manage OTA update of your ESP board.
+      copy in your Website (your path) the SimpleUpdate.bin generated
+      copy a json (text format) file named your SimpleUpdate.bin.version.json
+      in that file you have to write your SimpleUpdate.bin.version.json like following row:
+      {"v1":1,"v2":0,"v3":0,"v4":0}
+
+      if you want update the SPIFFS file System TOO you have to write into your "SimpleUpdate.bin.version.json" something like this:
+
+      {"v1":1,"v2":0,"v3":0,"v4":0,"SPIFFS_format":0,"SPIFFS_update_files":["/index.html","/index2.html","/images/monkey-logo.png"]}
+
+        "SPIFFS_format": 0 for no Format, 1 for format
+        "SPIFFS_update_files": [array list] contains a list of file to update on your ESP SPIFFS file System
+
+   Location: https://github.com/calfizzi/MCOTAUpdater
+
+*/
 #include "MCOTAUpdater.h"
 #include <WiFiClient.h>
 //#include <MCDebugger.h>
@@ -14,10 +36,10 @@
 #endif
 
 #ifndef  FILE_READ
-  #define  FILE_READ    "r"
+  #define  FILE_READ "r"
 #endif
 #ifndef  FILE_WRITE
-  #define  FILE_WRITE   "w"
+  #define  FILE_WRITE "w"
 #endif
 #ifndef  FILE_APPEND
   #define  FILE_APPEND  "a"
