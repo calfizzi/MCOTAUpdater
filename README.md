@@ -15,8 +15,9 @@ if you whant update the SPIFFS file System TOO you have to write into your "Simp
 {"v1":1,"v2":0,"v3":0,"v4":0,"SPIFFS_format":0,"SPIFFS_update_files":["/index.html","/index2.html","/images/monkey-logo.png"]}
 
 ```
-  ## "SPIFFS_format": 0 for no Format, 1 for format
-  ## "SPIFFS_update_files": [array list] contains a list of file to update on your ESP SPIFFS file System
+  "SPIFFS_format": 0 for no Format, 1 for format
+  "SPIFFS_update_files": [array list] contains a list of file to update on your ESP SPIFFS file System
+```
 
 ## Constructor
 ```
